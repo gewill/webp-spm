@@ -117,7 +117,10 @@ func main() {
     ]
     
     let currentDir = FileManager.default.currentDirectoryPath
+    let outputDir = "\(currentDir)/Outputs"
+    try? FileManager.default.createDirectory(atPath: outputDir, withIntermediateDirectories: true, attributes: nil)
     print("Running in: \(currentDir)")
+    print("Saving outputs to: \(outputDir)")
     
     for item in images {
         print("\n[*] Processing [\(item.name)] image...")
@@ -157,9 +160,9 @@ func main() {
         print("    WebP compressed size: \(webpSize) bytes (Ratio: \(String(format: "%.2f", ratio))%)")
         
         // Save the WebP image to disk
-        let webpURL = URL(fileURLWithPath: "\(currentDir)/\(item.name).webp")
+        let webpURL = URL(fileURLWithPath: "\(outputDir)/\(item.name).webp")
         try? webpData.write(to: webpURL)
-        print("    Saved WebP to: \(webpURL.lastPathComponent)")
+        print("    Saved WebP to: Outputs/\(webpURL.lastPathComponent)")
         
         // 5. Decode WebP back to RGBA pixels to verify roundtrip
         print("    Decoding WebP back to raw pixels...")
@@ -169,9 +172,9 @@ func main() {
         }
         
         // 6. Save decoded pixels as a new PNG to verify correctness
-        let outputPNGURL = URL(fileURLWithPath: "\(currentDir)/\(item.name)_decoded.png")
+        let outputPNGURL = URL(fileURLWithPath: "\(outputDir)/\(item.name)_decoded.png")
         if saveRGBAPixelsAsPNG(rgba: decodedPixels, width: decodedWidth, height: decodedHeight, to: outputPNGURL) {
-            print("    Verified! Saved decoded PNG to: \(outputPNGURL.lastPathComponent)")
+            print("    Verified! Saved decoded PNG to: Outputs/\(outputPNGURL.lastPathComponent)")
         } else {
             print("    [!] Failed to save verification PNG")
         }
