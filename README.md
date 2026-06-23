@@ -21,7 +21,7 @@ This package offers several advantages over the prebuilt iOS/macOS frameworks do
 | **Swift Package Manager** | ❌ **No**. Must be manually integrated or wrapped. |  **Yes**. Ready-to-use local or remote SPM package. |
 | **Modern Architecture** | ⚠️ Includes deprecated 32-bit bloat (`armv7`, `armv7s`, `i386`). |  **64-bit Only**. Optimized for modern iOS devices and Apple Silicon/Intel simulators. |
 | **Format Standard** | Contains legacy `.framework` fat files (prone to M1 simulator conflicts). |  **XCFramework Only**. Uses Apple's recommended modern package format. |
-| **Automation toolchain** | ❌ No public Xcode-compatible rebuild scripts. |  **Yes**. Includes a complete compiler suite (`Script/`) to rebuild from source with one command. |
+| **Automation toolchain** | ⚠️ **Has official script** but stable tags contain broken 32-bit targets on modern macOS, and it lacks SPM modulemap injection. |  **Yes**. Includes an automated wrapper (`Script/build.sh`) that clones, compiles with 64-bit modern fixes, and injects module maps. |
 
 ## Usage
 
