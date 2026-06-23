@@ -9,6 +9,20 @@ This Swift Package wraps Google's official WebP image format library (`libwebp`)
 * **iOS**: `arm64` (Devices)
 * **iOS Simulator**: `arm64` & `x86_64`
 
+---
+
+## Comparison with Official Prebuilt Frameworks
+
+This package offers several advantages over the prebuilt iOS/macOS frameworks downloadable from Google's official WebP website:
+
+| Feature | Official Prebuilt Frameworks | webp-spm (This Package) |
+| :--- | :--- | :--- |
+| **Swift `import WebP`** | ❌ **No**. Lacks Clang module maps. Requires manual bridging headers. |  **Yes**. Pre-configured with custom `module.modulemap` and umbrella headers for direct Swift import. |
+| **Swift Package Manager** | ❌ **No**. Must be manually integrated or wrapped. |  **Yes**. Ready-to-use local or remote SPM package. |
+| **Modern Architecture** | ⚠️ Includes deprecated 32-bit bloat (`armv7`, `armv7s`, `i386`). |  **64-bit Only**. Optimized for modern iOS devices and Apple Silicon/Intel simulators. |
+| **Format Standard** | Contains legacy `.framework` fat files (prone to M1 simulator conflicts). |  **XCFramework Only**. Uses Apple's recommended modern package format. |
+| **Automation toolchain** | ❌ No public Xcode-compatible rebuild scripts. |  **Yes**. Includes a complete compiler suite (`Script/`) to rebuild from source with one command. |
+
 ## Usage
 
 Add this package to your Swift project using Swift Package Manager.
