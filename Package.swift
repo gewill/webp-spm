@@ -14,9 +14,15 @@ let package = Package(
         .library(name: "WebPDecoder", targets: ["WebPDecoder"]),
         .library(name: "WebPDemux", targets: ["WebPDemux"]),
         .library(name: "WebPMux", targets: ["WebPMux"]),
-        .library(name: "SharpYuv", targets: ["SharpYuv"])
+        .library(name: "SharpYuv", targets: ["SharpYuv"]),
+        .executable(name: "WebPExample", targets: ["WebPExample"])
     ],
     targets: [
+        .target(
+            name: "WebPExample",
+            dependencies: ["WebP", "SharpYuv"],
+            path: "Sources/WebPExample"
+        ),
         .binaryTarget(
             name: "WebP",
             path: "Frameworks/WebP.xcframework"
