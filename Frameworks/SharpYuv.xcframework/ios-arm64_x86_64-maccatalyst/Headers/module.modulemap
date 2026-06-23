@@ -1,4 +1,0 @@
-module SharpYuv [system] {
-    umbrella header "SharpYuv-umbrella.h"
-    export *
-}
