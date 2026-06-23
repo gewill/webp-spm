@@ -38,6 +38,26 @@ print("WebP Version: \(version)")
 
 ---
 
+## Running the Example
+
+We have included a runnable Swift example target (`WebPExample`) to demonstrate how to call WebP C APIs in Swift on macOS.
+
+To run the example:
+1. Clone this repository locally.
+2. Run in terminal:
+   ```bash
+   swift run WebPExample
+   ```
+
+This example will:
+* Download 3 copyright-free images from the web.
+* Convert them to raw RGBA pixels using macOS native Cocoa (`NSImage`/`CGImage`) APIs.
+* Compress the pixels to WebP format using `WebPEncodeRGBA` (quality 80) and print size comparisons.
+* Decode them back to raw pixels using `WebPDecodeRGBA` and save them back as PNGs.
+* **All output images (`.webp` and `_decoded.png`) will be neatly saved inside the `Outputs/` directory.**
+
+---
+
 ## Rebuilding from Source
 
 If you wish to update or recompile the frameworks from source:
