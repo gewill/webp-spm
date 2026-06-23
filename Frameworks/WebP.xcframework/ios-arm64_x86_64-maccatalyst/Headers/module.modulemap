@@ -1,0 +1,4 @@
+module WebP [system] {
+    umbrella header "WebP-umbrella.h"
+    export *
+}

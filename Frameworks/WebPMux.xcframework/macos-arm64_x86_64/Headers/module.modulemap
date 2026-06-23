@@ -1,0 +1,4 @@
+module WebPMux [system] {
+    umbrella header "WebPMux-umbrella.h"
+    export *
+}

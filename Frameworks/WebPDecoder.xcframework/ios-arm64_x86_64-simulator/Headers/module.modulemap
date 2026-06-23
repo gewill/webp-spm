@@ -1,0 +1,4 @@
+module WebPDecoder [system] {
+    umbrella header "WebPDecoder-umbrella.h"
+    export *
+}
