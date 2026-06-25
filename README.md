@@ -91,3 +91,18 @@ This script will:
 * Merge them into a single set of XCFrameworks using `lipo` and `xcodebuild`.
 * Inject Swift-compatible `modulemap` and umbrella headers.
 * Overwrite the prebuilt binaries in the `Frameworks/` directory.
+
+## License and Notices
+
+webp-spm is available under the [MIT license](LICENSE).
+
+This repository is an independent Swift Package Manager distribution for
+`libwebp`. WebP and `libwebp` are names of their respective projects and
+rightsholders; this repository does not claim ownership of those projects or
+imply endorsement.
+
+Third-party license references:
+
+- `libwebp` / WebP code distributed through this package:
+  [BSD-style license](ThirdPartyLicenses/Google-BSD-3-Clause.txt)
+  and [patent grant](ThirdPartyLicenses/Google-Patents.txt)
