@@ -1,5 +1,9 @@
 # WebP for Swift Package Manager (webp-spm)
 
+> [!IMPORTANT]
+> This is an unofficial community package.
+> It is not affiliated with, endorsed by, or maintained by Google.
+
 This Swift Package wraps Google's official WebP image format library (`libwebp`) into multi-platform C/Swift modules. It provides prebuilt **XCFrameworks** supporting macOS (Intel & Apple Silicon) and iOS (Devices & Simulators) out of the box, with zero bridging header configuration required.
 
 ## Target Platform Support
